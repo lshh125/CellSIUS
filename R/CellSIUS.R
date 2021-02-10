@@ -119,7 +119,7 @@ CellSIUS = function(mat.norm,group_id,min_n_cells=10, min_fc = 2,
   options(warn=-1)
   if(class(mat.norm)!="matrix") stop("mat.norm is not of 'matrix' class")
   if(length(unique(group_id))<2) stop("The number of clusters in 'group_id' must be > 1")
-  if(!file.exists(mcl_path)) stop("I don't find mcl executable. External UNIX installation of MCL is required: https://micans.org/mcl/")
+  # if(!file.exists(mcl_path)) stop("I don't find mcl executable. External UNIX installation of MCL is required: https://micans.org/mcl/")
   if(is.null(rownames(mat.norm))| is.null(colnames(mat.norm))) stop("Column and row names of mat.norm matrix must be non-emptys")
   group_id = data.table::data.table(cell_idx = colnames(mat.norm),main_cluster=as.character(group_id))
   expr_dt = data.table::data.table(gene_id = rownames(mat.norm),mat.norm)
